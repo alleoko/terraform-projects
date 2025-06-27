@@ -14,4 +14,9 @@ provider "aws" {
 resource "aws_instance" "example-alleoko" {
   ami           = "ami-0435fcf800fb5418d" # Example AMI ID for ap-southeast-1
   instance_type = "t2.micro"
+  key_name      = "my-key-pair" # This is your keypair you created earlier
+  tags = {
+    Name = "MyEC2Instance"
+  }
 }
+
